@@ -4,17 +4,16 @@ from alexnet import alexnet
 WIDTH  = 80
 HEIGHT = 60
 LR = 1e-3
-EPOCHS = 20
+EPOCHS = 10
 
 MODEL_NAME = 'alexnet.model'
 
 model = alexnet(WIDTH, HEIGHT, LR)
 
-train_data = np.load("training_data.npy")
+train_data = np.load("training_data_balanced.npy")
 
-train = train_data[:-400]
-test = train_data[-400:]
-
+train = train_data[:-300]
+test = train_data[-300:]
 
 print(train.shape)
 X = np.array([i[0] for i in train]).reshape(-1, WIDTH, HEIGHT, 1)

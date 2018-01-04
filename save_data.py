@@ -13,4 +13,4 @@ def captureData(image,choice):
     if len(trainingData) == 1000:
         shuffle(trainingData)
         np.save(file_name,trainingData)
-        print('SAVED')
+        print('===============================SAVED===========================')
